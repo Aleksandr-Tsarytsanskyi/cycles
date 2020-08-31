@@ -1,107 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-  <meta charset="utf-8">
-  <title>overflow</title>
-  <style>
-   
-  </style>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <title>Javascript</title>
  </head>
  <body> 
    <script>
-      /* let a = prompt("Введите число");
-      if (a > 10) {
-          console.log("Вверно");
-      }
-      else {
-          alert("")
-      }
-      */
-      //let number = +prompt("Введите число")
-      //let string = prompt("Введите строку")
-     /* function checkNumber(x = 0) {
-           let string = " ";
-           if (x >= 0 || x < 0) {
-             return 1;
-           }
-           else {
-             alert("строка");
-           }
-      }
-      function checkString(string) {
-          if(string == "Строка") {
-            return 0;
-          }
-          else {
-            alert("число")
-          }
-      }
-     console.log(checkString("Строка"));
-     console.log(checkNumber());
-     */
-     //Циклы
-     /*const COLOR = "red";
-     for (var i = 1; true; i++) {
-      let a = prompt("Угадайте цвет с трех попыток");
-       if (a === null) {
-        break;
-      }
-       esle if (!Number == isNaN(a)) {
-        alert("Не коррекнтные данные");
-      } 
-      else if (a == COLOR) {
-       alert("Угадал");
-       break;
-      }
-        else alert("Не угадал");
-        if (i == 3)break;
-     }
-     */
-     function calculate(n1, n2, sign) {
-      switch(sign) {
-        case "+": {
-        return n1 + n2;
-        }
-        break;
-        case "-": {
-        return n1 - n2;
-        }
-        break;
-        case "*": {
-        return n1 * n2;
-        }
-        break;
-        case "/": {
-        return n1 / n2;
-        }
-      }
-     }  
-     function add(x, y) {
-       return x + y;
-     }
-     function sub(x, y) {
-       return x - y;
-     }
-     function mult(x, y) {
-       return x * y;
-     }
-     function div (x, y) {
-        if (x !== 0) {
-          return x / y
-        }
-        else {
-          return "не делится на ноль";
-        }
-     }
-     console.log(add(4, 8));
-     console.log(sub(4, 8));
-     console.log(mult(4, 8));
-     console.log(div(4, 8));
-     console.log("------------------------");
-     console.log(calculate(3, 2, "+"));
-     console.log(calculate(3, 2, "-"));
-     console.log(calculate(3, 2, "*"));
-     console.log(calculate(3, 2, "/"));
+       
+     function checkRandomNumber() { 
+        for (let i = 1; i <= 5; i++) {
+            let number = prompt("Угадайте число");
+            let a = Math.floor(Math.random() * 100);
+            console.log(a);
+            function getNumber(){
+                if(number == "") {
+                    alert("Вы нечего не вели");
+                }
+                else if (number == null) {
+                    alert("Отмена");
+                }
+                else if (number > a) {
+                    alert("число больше от загаданного");
+                }
+                else if (number < a) {
+                    alert("Число меньше от загаданного");
+                }
+                else if(number == a) {
+                    alert("Вы угадали");
+                }
+                else {
+                    (isNaN(number)) 
+                    alert("Введена строка");
+                }
+            }
+        function attempts(){
+                switch(i) {
+                    case 1: {
+                        alert("Осталось четыре попытки");
+                    } 
+                    break; 
+                    case 2: {
+                        alert("Осталось три попытки");
+                    } 
+                    break;
+                    case 3: {
+                        alert("Осталось две попытки");
+                    }
+                    break;
+                    case 4: {
+                        alert("Осталось одна попытки");
+                    }  
+                }   
+            }
+            getNumber();
+            attempts();
+            }
+     } 
+     checkRandomNumber();
    </script>
  </body>
 </html>
