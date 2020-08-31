@@ -36,21 +36,24 @@
         function attempts(){
                 switch(i) {
                     case 1: {
-                        alert("Осталось четыре попытки");
+                        getstring("Осталось четыре попытки");
                     } 
                     break; 
                     case 2: {
-                        alert("Осталось три попытки");
+                        getstring("Осталось три попытки");
                     } 
                     break;
                     case 3: {
-                        alert("Осталось две попытки");
+                        getstring("Осталось две попытки");
                     }
                     break;
                     case 4: {
-                        alert("Осталось одна попытки");
+                        getstring("Осталось одна попытки");
                     }  
                 }   
+            }
+            function output(string) {
+                alert(string)
             }
             getNumber();
             attempts();
