@@ -6,12 +6,11 @@
  </head>
  <body> 
    <script>
-       
-     function checkRandomNumber() { 
+       //Вы мне написали в заданиие Нужно разделить валидацию введенного числа и проверку на больше/ меньше обьесните как это сделать
+     function randomNumber() { 
+        let a = Math.floor(Math.random() * 100);
         for (let i = 1; i <= 5; i++) {
             let number = prompt("Угадайте число");
-            let a = Math.floor(Math.random() * 100);
-            console.log(a);
             function getNumber(){
                 if(number == "") {
                     alert("Вы нечего не вели");
@@ -34,24 +33,23 @@
                 }
             }
         function attempts(){
-                switch(i) {
-                    case 1: {
-                        output("Осталось четыре попытки");
-                    } 
-                    break; 
-                    case 2: {
-                        output("Осталось три попытки");
-                    } 
-                    break;
-                    case 3: {
-                        output("Осталось две попытки");
-                    }
-                    break;
-                    case 4: {
-                        output("Осталось одна попытки");
-                    }  
-                }   
-            }
+            if (i == 1) {   
+                output("Осталось четыре попытки");
+            }  
+            else if (i == 2) {             
+                output("Осталось три попытки"); 
+             }     
+             else if (i == 3) {              
+                output("Осталось две попытки"); 
+             } 
+             else if (i == 4) { 
+                output("Осталось одна попытки");
+             } 
+             else {
+                console.log(a);
+             }
+                
+        }
             function output(string) {
                 alert(string);
             }
@@ -59,7 +57,7 @@
             attempts();
             }
      } 
-     checkRandomNumber();
+     randomNumber();
    </script>
  </body>
 </html>
