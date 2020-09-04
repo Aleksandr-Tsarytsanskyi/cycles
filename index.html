@@ -6,58 +6,35 @@
  </head>
  <body> 
    <script>
-       //Вы мне написали в заданиие Нужно разделить валидацию введенного числа и проверку на больше/ меньше обьесните как это сделать
-     function randomNumber() { 
-        let a = Math.floor(Math.random() * 100);
-        for (let i = 1; i <= 5; i++) {
-            let number = prompt("Угадайте число");
-            function getNumber(){
-                if(number == "") {
-                    alert("Вы нечего не вели");
-                }
-                else if (number == null) {
-                    alert("Отмена");
-                }
-                else if (number > a) {
-                    alert("число больше от загаданного");
-                }
-                else if (number < a) {
-                    alert("Число меньше от загаданного");
-                }
-                else if(number == a) {
-                    alert("Вы угадали");
-                }
-                else {
-                    (isNaN(number)) 
-                    alert("Введена строка");
-                }
+       let array = [10, 'Hello world', null, true , '', false, 255]
+       let obj = {
+           number: "number",
+           Boolean: "Boolean",
+           string: "Строка"
+       }
+       let item;
+       let deleted;
+       let deletedElementsArray = [];
+     function explainer(array) {
+        for (let i = 0; i < array.length; i++) {
+            item = array[i];
+            if(!item) {
+                deleted = array.splice(i--, 1)[0];
+                deletedElementsArray.push(deleted);
             }
-        function attempts(){
-            if (i == 1) {   
-                output("Осталось четыре попытки");
-            }  
-            else if (i == 2) {             
-                output("Осталось три попытки"); 
-             }     
-             else if (i == 3) {              
-                output("Осталось две попытки"); 
-             } 
-             else if (i == 4) { 
-                output("Осталось одна попытки");
-             } 
-             else {
-                console.log(a);
-             }
-                
-        }
-            function output(string) {
-                alert(string);
-            }
-            getNumber();
-            attempts();
-            }
-     } 
-     randomNumber();
+        } 
+        return deletedElementsArray;   
+     }
+        function replaceElementsArray(){
+            array.splice(0, 1, obj.number);
+            array.splice(1, 1, obj.string);
+            array.splice(2, 1, obj.Boolean);
+            array.splice(3, 1, obj.number);
+            
+     }
+     explainer(array);
+    replaceElementsArray();
+    console.log(array);
    </script>
  </body>
 </html>
