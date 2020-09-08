@@ -5,7 +5,8 @@
   <title>Javascript</title>
  </head>
  <body> 
-   <script>
+   <script>  
+    function getYoungEmployees() {
         let vasia = { name: "Вася", age: 25 };
         let petia = { name: "Петя", age: 30 };
         let masha = { name: "Маша", age: 28 };
@@ -14,15 +15,17 @@
         let lena = { name: "Лена", age: 18 };
 
         let users = [ vasia, petia, masha, egor, dima, lena ];
-        let sortByKey = users.slice();
-        let result = sortByKey.filter(getYoungEmployees);
+        let arr = users.slice();
+        let result = arr.filter(sortByKey);
          result.sort(function (a, b) {
           return a.age - b.age;
         });
-        function getYoungEmployees(users) {
+        function sortByKey(users) {
           return users.age <= 30;
         }
         console.log(result);
+      }  
+      getYoungEmployees();
    </script>
  </body>
 </html>
