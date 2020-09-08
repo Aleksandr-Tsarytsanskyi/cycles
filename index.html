@@ -6,35 +6,23 @@
  </head>
  <body> 
    <script>
-       let array = [10, 'Hello world', null, true , '', false, 255]
-       let obj = {
-           number: "number",
-           Boolean: "Boolean",
-           string: "Строка"
-       }
-       let item;
-       let deleted;
-       let deletedElementsArray = [];
-     function explainer(array) {
-        for (let i = 0; i < array.length; i++) {
-            item = array[i];
-            if(!item) {
-                deleted = array.splice(i--, 1)[0];
-                deletedElementsArray.push(deleted);
-            }
-        } 
-        return deletedElementsArray;   
-     }
-        function replaceElementsArray(){
-            array.splice(0, 1, obj.number);
-            array.splice(1, 1, obj.string);
-            array.splice(2, 1, obj.Boolean);
-            array.splice(3, 1, obj.number);
-            
-     }
-     explainer(array);
-    replaceElementsArray();
-    console.log(array);
+        let vasia = { name: "Вася", age: 25 };
+        let petia = { name: "Петя", age: 30 };
+        let masha = { name: "Маша", age: 28 };
+        let egor = { name: "Егор", age: 40 };
+        let dima = { name: "Дима", age: 35 };
+        let lena = { name: "Лена", age: 18 };
+
+        let users = [ vasia, petia, masha, egor, dima, lena ];
+        let sortByKey = users.slice();
+        let result = sortByKey.filter(getYoungEmployees);
+         result.sort(function (a, b) {
+          return a.age - b.age;
+        });
+        function getYoungEmployees(users) {
+          return users.age <= 30;
+        }
+        console.log(result);
    </script>
  </body>
 </html>
