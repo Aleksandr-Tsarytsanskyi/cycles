@@ -15,14 +15,7 @@
         let lena = { name: "Лена", age: 18 };
 
         let users = [ vasia, petia, masha, egor, dima, lena ];
-        let arr = users.slice();
-        let result = arr.filter(sortByKey);
-         result.sort(function (a, b) {
-          return a.age - b.age;
-        });
-        function sortByKey(users) {
-          return users.age <= 30;
-        }
+       let result = users.filter((array) => array.age <= 30).map((array) => array.name);
         console.log(result);
       }  
       getYoungEmployees();
